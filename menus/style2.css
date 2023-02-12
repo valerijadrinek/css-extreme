@@ -1,0 +1,245 @@
+:root {
+	--black: #272727;
+	--lightblue: aqua;
+    --blue: rgb(36,46,149);
+	--white: azure;
+	--red: #e1332d;
+	--bordo: #f44336;
+	--yellow: #fffa65;
+    --green: #006266;
+}
+
+
+body {
+	height: 100vh;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 0;
+	align-content: flex-start;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    margin-top: 2vw;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li {
+   list-style-type: none;
+   margin-left: 2vw;
+}
+
+ul li a {
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    padding: 10px 15px;
+    position: relative;
+}
+
+/*menu 7*/
+.menuLink {
+    text-transform: uppercase;
+    color: var(--blue);
+    font-weight: 900;
+    letter-spacing: 0.2vw;
+    transition: all 0.5s;
+    position: relative;
+ }
+
+ .menuLink:hover {
+    color: var(--white);
+    font-weight: 900;
+ }
+ 
+ .menuLink::before {
+    content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     opacity: 0;
+     transform: scaleY(2);
+     transition: all 0.5s;
+     border-top: 2px solid black;
+     border-bottom: 2px solid black;
+ }
+ 
+ .menuLink:hover:before {
+     transform: scaleY(1.2);
+     opacity: 1;
+ }
+
+ .menuLink::after {
+    content: "";
+     position: absolute;
+     top: 0.2vh;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: var(--blue);
+     opacity: 0;
+     transform: scale(0);
+     transition: all 0.5s;
+     z-index: -1;
+ }
+
+ .menuLink:hover:after {
+    opacity: 1;
+    transform: scale(1);
+ }
+
+ /*menu 8*/
+
+ .menuLink1 {
+    color: var(--black);
+    letter-spacing: 0.2vw;
+    font-weight: 500;
+    transition: all 0.5s;
+ }
+
+ .menuLink1:hover {
+    color: var(--yellow);
+    font-weight: 900;
+    text-transform: uppercase;
+    background-color: #272727;
+ }
+
+ .menuSpan1:first-child::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.5vw;
+    height: 0.5vw;
+    background-color: transparent;
+    border-top: 2px solid var(--yellow);
+    border-left: 2px solid var(--yellow);
+    transition: all 0.2s;
+    opacity: 0;
+ }
+
+ .menuSpan1:first-child::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.5vw;
+    height: 0.5vw;
+    background-color: transparent;
+    border-top: 2px solid var(--yellow);
+    border-right: 2px solid var(--yellow);
+    transition: all 0.2s;
+    opacity: 0;
+ }
+
+ .menuSpan1:last-child::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0.5vw;
+    height: 0.5vw;
+    background-color: transparent;
+    border-bottom: 2px solid var(--yellow);
+    border-left: 2px solid var(--yellow);
+    transition: all 0.2s;
+    opacity: 0;
+ }
+
+ .menuSpan1:last-child::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0.5vw;
+    height: 0.5vw;
+    background-color: transparent;
+    opacity: 0;
+    border-bottom: 2px solid var(--yellow);
+    border-right: 2px solid var(--yellow);
+    transition: all 0.2s;
+ }
+
+
+ .menuLink1:hover .menuSpan1:first-child::before {
+    top: -1vw;
+    left: -1vw;
+    opacity: 1;
+}
+
+.menuLink1:hover .menuSpan1:first-child::after {
+    top: -1vw;
+    right: -1vw;
+    opacity: 1;
+}
+
+.menuLink1:hover .menuSpan1:last-child::before {
+    bottom: -1vw;
+    left: -1vw;
+    opacity: 1;
+}
+
+.menuLink1:hover .menuSpan1:last-child::after {
+    bottom: -1vw;
+    right: -1vw;
+    opacity: 1;
+}
+
+/*menu 9*/
+.menuLink2 {
+    color: var(--red);
+    text-shadow: none;
+}
+
+.menuLink2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid var(--yellow);
+    border-left: 2px solid var(--yellow);
+    box-sizing: border-box;
+    transition: all 0.5s;
+    transform-origin: left;
+}
+
+.menuLink2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid var(--yellow);
+    border-right: 2px solid var(--yellow);
+    box-sizing: border-box;
+    transition: all 0.5s;
+    transform-origin: right;
+}
+
+.menuLink2:hover::before {
+width: 1vw;
+height: 1vw;
+transform: rotate(360deg);
+}
+
+.menuLink2:hover::after {
+width: 1vw;
+height: 1vw;
+transform: rotate(360deg);
+}
+
+

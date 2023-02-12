@@ -1,0 +1,359 @@
+:root {
+	--black: #272727;
+	--lightblue: aqua;
+    --blue: rgb(36,46,149)
+	--white: azure;
+	--red: #e1332d;
+	--bordo: #f44336;
+	--yellow: #fffa65;
+    --green: #006266;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 0;
+	align-content: flex-start;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    margin-top: 2vw;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: var(--black);
+}
+
+ul li {
+   list-style-type: none;
+   margin-left: 2vw;
+}
+
+ul li a {
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    padding: 10px 15px;
+    position: relative;
+}
+
+
+
+.menuLink::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: all 0.5s;
+    background-color: var(--black);
+}
+
+.menuLink:hover::before,
+.menuLink:hover::after {
+   transform: scaleX(1);
+}
+
+.menuLink::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: all 0.5s;
+    background-color: var(--black);
+}
+
+/*menu 2*/
+
+.menuLink2 {
+    text-transform: uppercase;
+    margin: 0 2vw;
+    transition: all 1s;
+    color: var(--bordo);
+}
+
+.menuLink2:hover {
+    background-color: var(--bordo);
+    color: var(--white);
+}
+
+.menuLink2::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    height: 15px;
+    width: 15px;
+    transition: all 0.5s;
+}
+
+.menuLink2:hover:before {
+    border-left: 2px solid var(--bordo);
+    border-top: 2px solid var(--bordo); 
+    top: -8px;
+    left: -8px;
+    transform: scale(1.2);
+}
+
+.menuLink2::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    height: 15px;
+    width: 15px;
+    transition: all 0.5s;
+}
+
+.menuLink2:hover:after {
+    border-right: 2px solid var(--bordo);
+    border-bottom: 2px solid var(--bordo); 
+    right: -8px;
+    bottom: -8px;
+    transform: scale(1.2);
+}
+
+/*menu 3*/
+.menuLink3 {
+    margin: 0;
+    padding: 1vw;
+    transition: all 0.8s;
+    overflow: hidden;
+    text-align: center;
+}
+
+.menuLink3:hover {
+    color: var(--white);
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.menuLink3::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background-color: var(--lightblue);
+    transition: all 0.8s;
+    z-index: -1;
+}
+
+.menuLink3:hover:before {
+    top: 0;
+}
+
+.menuLink3::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 25%;
+    width: 25%;
+    height: 100%;
+    background-color: var(--lightblue);
+    transition: all 0.8s ease 0.2s;
+    z-index: -1;
+}
+
+.menuLink3:hover::after {
+    top: 0;
+}
+
+.menuSpan3::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    width: 25%;
+    height: 100%;
+    background-color: var(--lightblue);
+    transition: all 0.8s ease 0.4s;
+    z-index: -1;
+}
+
+.menuLink3:hover .menuSpan3::before {
+    top: 0;
+}
+
+.menuSpan3::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 75%;
+    width: 25%;
+    height: 100%;
+    background-color: var(--lightblue);
+    transition: all 0.8s ease 0.6s;
+    z-index: -1;
+}
+
+.menuLink3:hover .menuSpan3::after {
+    top: 0;
+}
+
+/*menu4*/
+.menuLink4 {
+    text-transform: uppercase;
+    color: var(--red);
+    position: relative;
+    transition: all 1s;
+}
+
+.menuLink4:hover {
+    font-weight: 900;
+    color: var(--yellow);
+}
+
+.menuSpan4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background-color: var(--black);
+  z-index: -1;
+  transition: all 1s;
+  transform: scaleX(0); /* transform-origin: left if animations goes from left corner of span element*/
+}
+
+.menuSpan4:nth-child(2) {
+    top: 25%;
+    transition-delay: 0.2s;
+}
+
+.menuSpan4:nth-child(3) {
+    top: 50%;
+    transition-delay: 0.4s;
+}
+
+.menuSpan4:nth-child(4) {
+    top: 75%;
+    transition-delay: 0.6s;
+}
+.menuLink4:hover .menuSpan4 {
+    transform: scale(1);
+}
+
+/*menu 5*/
+.menuLink5 {
+    color: var(--black);
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 3vw;
+    position: relative;
+}
+
+.menuLink5:before {
+    content: "";
+    position: absolute;
+    bottom: -20%;
+    left: 0;
+    width: 0;
+    height: 0.5vw;
+    background-color: aqua;
+    transition: all 0.5s;
+}
+
+.menuLink5:after {
+    content: "";
+    position: absolute;
+    bottom: -20%;
+    right: 0;
+    width: 0;
+    height: 0.5vw;
+    background-color: #f0f;
+    transition: all 0.5s;
+}
+
+.menuLink5:hover::before {
+    width: 50%;
+    transform: translateX(100%);
+}
+
+.menuLink5:hover::after {
+    width: 50%;
+    transform: translateX(-100%);
+}
+
+
+/*menu6*/
+.menuLink6 {
+    color: var(--red);
+    font-weight: 300;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 1s;
+  
+}
+
+.menuLink6:hover {
+    color: var(--white) !important;
+    font-weight: 900;
+}
+
+.menuSpan6:nth-child(2) {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 1s;
+    transform-origin: bottom;
+    transform: translateY(100%);
+}
+
+
+.menuLink6:hover .menuSpan6:nth-child(2) {
+    z-index: 2;
+    color: var(--white);
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.menuLink6:hover .menuSpan6:nth-child(1) {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.menuLink6::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    background-color: var(--lightblue);
+    transition: all 0.5s;
+    transform-origin: left;
+    transform: scaleX(0);
+    z-index: -1;
+}
+
+.menuLink6:hover::before {
+    transition-delay: 1s;
+    transform: scaleX(1);
+}
+
