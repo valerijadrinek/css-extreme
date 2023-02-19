@@ -1,0 +1,120 @@
+
+:root {
+  --pink: #ff56ac;
+  --grey: #777;
+  --white: #fff;
+  --black: #000;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Raleway', Arial, sans-serif;
+  background-color: #3b3b3b;
+}
+
+.container {
+    margin: 10vh 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 6vh;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+}
+
+ul li {
+   color: var(--white); 
+   font-size: 10vh;
+   letter-spacing: 1vw;
+   font-weight: 900; 
+   transition: all 2s;
+}
+/*example 1*/
+/*<!--smoky disappearing letters-->*/
+.l1:hover .e1 {
+  transform: rotate(45deg) translateY(-10vh);
+  opacity: 0;
+  filter: blur(20px);
+}
+
+.e1:nth-child(1) {
+  transition-delay: 0;
+}
+
+.e1:nth-child(2) {
+  transition-delay: 0.4s;
+}
+
+.e1:nth-child(3) {
+  transition-delay: 0.8s;
+}
+
+.e1:nth-child(4) {
+  transition-delay: 1.2s;
+}
+
+.e1:nth-child(5) {
+  transition-delay: 1.6s;
+}
+
+/*example 2*/
+/*<!--text filling on hover-->*/
+#ex1 {
+  color: var(--white);
+  font-size: 10vh;
+  font-weight: 600;
+  letter-spacing: 0.5vw;
+  text-transform: capitalize;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+#ex1::before {
+  content: "Filled text";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--pink);
+  transition: all 1s;
+  transform: translateX(-100%);
+  overflow: hidden;
+}
+
+#ex1:hover::before {
+  transform: translateX(0);
+}
+
+#ex2 {
+  color: var(--white);
+  font-size: 10vh;
+  text-transform: uppercase;
+  position: relative;
+  transition: all 1s;
+}
+
+#ex2::before {
+  content: "text";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  color: var(--pink);
+  transition: all 1s; 
+  overflow: hidden;
+}
+
+#ex2:hover::before {
+width: 100%;
+}
+
