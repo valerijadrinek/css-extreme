@@ -34,6 +34,7 @@ body {
   align-items: center;
 }
 
+/*card1*/
 .card1 {
   width: 100%;
   height: 30vh;
@@ -271,5 +272,61 @@ body {
 .card3:hover .content3 {
   opacity: 1;
   left: 5%;
+}
+
+
+/*image with clip path*/
+.content4 {
+  height: 25vw;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.content4 h2 {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+}
+
+.content4 p {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+}
+
+.content4 a {
+  text-decoration: none;
+  margin-top: 1rem;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  color: var(--grey);
+  padding: 1rem;
+  transition: all 0.5s;
+  border: 2px outset var(--pink);
+  border-radius: 0.7rem;
+}
+
+.content4 a:hover {
+  color: var(--white);
+  background-color: var(--grey);
+  border: none;
+}
+
+.coverImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.coverImage:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 0);
 }
 

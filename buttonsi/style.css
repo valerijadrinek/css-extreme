@@ -5,6 +5,7 @@
 	--red: #e1332d;
 	--bordo: #f44336;
 	--yellow: #fffa65;
+	--darkblue: #4834d4;
 }
 
 * {
@@ -12,17 +13,42 @@
 }
 
 body {
-	height: 100vh;
+	height: 180vh;
 	margin: 0;
+	overflow-x: hidden;
+	
+}
+
+header {
+	text-align: center;
+	padding: 2vw auto 1vw auto;
+	margin-top: 3vw;
+}
+
+h1 {
+	font-size: 4rem;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	color: var(--red);
+	text-shadow: 0.5vw 0.5vw 2vw rgba(0,0,0,0.8);
+}
+
+.row {
+	display: flex;
+	flex-flow: row nowrap;
+	margin: 1vw;
+    height: 20vh;
+	overflow: hidden;
+	justify-content: center;
+	align-items: center;
+}
+
+.half {
+	width: 50%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-wrap: wrap;
-	padding: 0;
-	align-content: flex-start;
+	
 }
-
-
 /* background from corner on hover*/
 a {
 	text-decoration: none;
@@ -601,7 +627,7 @@ transition: all 0.3s;
 	transition-delay: 0.2s;
 }
 
-#splitted-layers:hover #uh3:hover:before {
+#splitted-layers:hover #uh3::before {
 	bottom: 0;
 	left: 50%;
 }
@@ -612,7 +638,7 @@ transition: all 0.3s;
 	transition-delay: 0.3s;
 }
 
-#splitted-layers:hover #uh3:hover:after {
+#splitted-layers:hover #uh3::after {
 	right: 0;
 	bottom: 0;
 }
@@ -709,7 +735,6 @@ transition: all 0.3s;
 	background-color: var(--red);
 	text-transform: uppercase;
 	transition: all 1s;
-    line-height: 120px;
 	text-align: center;
 	color: var(--white);
 	letter-spacing: 15px;
@@ -869,8 +894,59 @@ z-index: -1;
    transform: translate(-50%, -50%) rotate(180deg);
 }
 
+/*clip-path button*/
+
+#clip {
+	height: 100%;
+	width: 25%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.clippathBtn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	color: white;
+	background-color: var(--darkblue);
+	text-align: center;
+	line-height: 10vh;
+	text-transform: uppercase;
+	transition: all 0.5s;
+	letter-spacing: 2px;
+}
+
+.clippathBtn:nth-child(2) {
+	color: var(--darkblue);
+	background-color: white;
+	clip-path: polygon(70% 0, 100% 0%, 100% 100%, 70% 100%, 34% 50%);
+}
+
+.clippathBtn:nth-child(2):hover {
+	clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 0 50%);
+}
+
+.clippathBtn:nth-child(1):hover ~ span {
+	clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%, 100% 50%);
+}
 
 
+
+
+/*media quereis for mobile*/
+@media screen and (max-width: 600px) {
+	.row {
+		flex-flow: column nowrap;
+		height: 50vh;
+		margin-bottom: 1vh;
+	}
+	.half {
+		width: 100%;
+	}
+}
 
 
 

@@ -1,0 +1,138 @@
+:root {
+    --pink: #ff56ac;
+    --grey: #777;
+    --white: #fff;
+    --black: #000;
+    --red: #ff3838;
+    --blue: #7efff5;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+  
+  body {
+    margin: 0;
+    height: 130vh;
+    font-family: 'Raleway', Arial, sans-serif;
+    background-image:linear-gradient(45deg, #3b3b3b 45%,  #26d812);
+    perspective: 2000px;
+  }
+
+
+/*header*/
+  header {
+	text-align: center;
+	padding: 2vw auto 1vw auto;
+	margin-top: 3vw;
+}
+
+h1 {
+	font-size: 4rem;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	color: var(--red);
+	text-shadow: 0.5vw 0.5vw 2vw rgba(0,0,0,0.8);
+}
+
+
+  /*main container*/
+  .container {
+      margin: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      height: 20vh;
+  }
+
+  .half {
+    flex:50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /*letters with wave animations*/
+
+  .wave {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+ .wave h2 {
+    position: absolute;
+    text-align: center;
+    line-height: 18vh;
+    font-size: 12rem;
+    text-transform: uppercase;
+    margin: auto;
+    padding: auto;
+    font-weight: 900;
+  }
+
+  .wave h2:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--blue);
+  }
+
+  .wave h2:nth-child(2) {
+    color: #03a9f4;
+    animation: waves 2s ease-in-out infinite;
+  }
+
+  @keyframes waves {
+    0% {clip-path: polygon(0% 38%, 21% 40%, 38% 51%, 54% 57%, 75% 57%,100% 52%, 100% 100%, 0% 100%);}
+    50% {clip-path: polygon(0% 49%, 16% 56%, 33% 55%, 55% 50%, 75% 42%, 100% 40%, 100% 100%, 0% 100%);}
+    100% {clip-path: polygon(0% 38%, 21% 40%, 38% 51%, 54% 57%, 75% 57%,100% 52%, 100% 100%, 0% 100%);}
+  }
+
+  /*black & white text effect*/
+
+  .black-white {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .black-white h2 {
+    position: absolute;
+    text-align: center;
+    line-height: 18vh;
+    font-size: 12rem;
+    text-transform: uppercase;
+    margin: auto;
+    padding: auto;
+    font-weight: 900;
+    transition: all 0.5s;
+  }
+
+  .black-white h2:nth-child(2) {
+    color: var(--white);
+    clip-path: polygon(0 100%, 100% 0, 100% 0, 0 0);/*bez izvrtanja clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);*/
+  }
+
+
+  .black-white h2:nth-child(2):hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  
+ .black-white h2:nth-child(1) {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 100%);
+ }
+
+ .black-white h2:nth-child(1):hover {
+    transition: all 0.5s;
+    clip-path: none;
+    z-index: 1;
+ }
